@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'jetty'
+
+repositories { mavenCentral() }
+
+dependencies {
+	def junitVersion = "3.8.1"
+	def jerseyVersion = "1.18.1"
+	def wordnikVersion = "1.3.1"
+	def servletVersion = "2.5"
+	def log4jVersion = "1.2.16"
+	def slf4jVersion = "1.6.1"
+	
+	compile "junit:junit:$junitVersion"
+	compile "com.sun.jersey:jersey-core:$jerseyVersion"
+	compile "com.sun.jersey:jersey-json:$jerseyVersion"
+	compile "com.sun.jersey:jersey-servlet:$jerseyVersion"
+	compile "com.wordnik:swagger-jersey2-jaxrs_2.10:$wordnikVersion"
+	compile "com.wordnik:swagger-core_2.10:$wordnikVersion"
+	compile "javax.servlet:servlet-api:$servletVersion"
+	compile "log4j:log4j:$log4jVersion"
+	compile "org.slf4j:slf4j-log4j12:$slf4jVersion"
+}
+
+jettyRun.httpPort = 8002
